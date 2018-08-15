@@ -1,0 +1,36 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Beitrag erstellen</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list>
+        <ion-item>
+          <ion-label>Kategorie</ion-label>
+          <ion-select [(ngModel)]="Kategorie">
+            <ion-option value="3D">3D-Drucker</ion-option>
+            <ion-option value="CNC">CNC-Fräse</ion-option>
+           </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>Thema</ion-label>
+            <ion-select [(ngModel)]="Thema">
+              <ion-option value="Material">Material</ion-option>
+              <ion-option value="Software">Software</ion-option>
+              <ion-option value="Baupläne">Baupläne</ion-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>
+              <ion-input placeholder="Überschrift"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-input placeholder="Text"></ion-input>
+          </ion-item>
+          <ion-title>Dokumente hinzufügen:</ion-title>
+      </ion-list>
+      
+</ion-content>
