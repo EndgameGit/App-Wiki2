@@ -1,5 +1,12 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {
+  IonicPage,
+  NavController,
+  NavParams,
+  ToastController
+} from 'ionic-angular';
+import { StorageProvider } from '../../providers/storage/storage';
+import { Post } from '../../entities/post.entiy';
 
 /**
  * Generated class for the CreatePostPage page.
@@ -11,15 +18,38 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 @IonicPage()
 @Component({
   selector: 'page-create-post',
-  templateUrl: 'create-post.html',
+  templateUrl: 'create-post.html'
 })
 export class CreatePostPage {
+  public newPost = {} as Post;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private storage: StorageProvider,
+    private toastCtrl: ToastController
+  ) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CreatePostPage');
   }
 
+  savePost() {
+    this.storage.getValue<Post[]>('posts').then(value => {
+      if (!Array.isArray(value)) {
+        value = new Array<Post>();
+      }
+      value.push(this.newPost);
+      this.storage.setValue('posts', value).then(() => {
+        console.log('New Array saved');
+
+        this.toastCtrl
+          .create({
+            duration: 1500,
+            message: 'Beitrag erstellt'
+          })
+          .present();
+      });
+    });
+  }
 }

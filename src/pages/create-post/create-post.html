@@ -8,30 +8,32 @@
 
 
 <ion-content padding>
-    <ion-list>
-      <p>Wähle Kategorie und Thema:</p>
-        <ion-item>
-          <ion-label>Kategorie</ion-label>
-          <ion-select [(ngModel)]="Kategorie">
-            <ion-option value="3D">3D-Drucker</ion-option>
-            <ion-option value="CNC">CNC-Fräse</ion-option>
-           </ion-select>
-        </ion-item>
-        <ion-item>
-            <ion-label>Thema</ion-label>
-            <ion-select [(ngModel)]="Thema">
-              <ion-option value="Material">Material</ion-option>
-              <ion-option value="Software">Software</ion-option>
-              <ion-option value="Baupläne">Baupläne</ion-option>
-            </ion-select>
-          </ion-item>
-          <ion-item>
-              <ion-input placeholder="Überschrift"></ion-input>
-          </ion-item>
-          <ion-item>
-              <ion-input placeholder="Text"></ion-input>
-          </ion-item>
-          <p>Dokumente hinzufügen:</p>
-      </ion-list>
-      
+  <ion-list>
+    <p>Wähle Kategorie und Thema:</p>
+    <ion-item>
+      <ion-label>Kategorie</ion-label>
+      <ion-select [(ngModel)]="newPost.cat">
+        <ion-option value="3D">3D-Drucker</ion-option>
+        <ion-option value="CNC">CNC-Fräse</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Thema</ion-label>
+      <ion-select [(ngModel)]="newPost.topic">
+        <ion-option value="Material">Material</ion-option>
+        <ion-option value="Software">Software</ion-option>
+        <ion-option value="Baupläne">Baupläne</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-input [(ngModel)]="newPost.title" placeholder="Überschrift"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-textarea [(ngModel)]="newPost.text" placeholder="Text"></ion-textarea>
+    </ion-item>
+    <p>Dokumente hinzufügen:</p>
+  </ion-list>
+
+  <button ion-button block (click)="savePost()">Beitrag erstellen</button>
+
 </ion-content>
