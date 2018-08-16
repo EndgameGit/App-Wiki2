@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the OverviewPage page.
+ * Generated class for the ItemListPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,21 +10,22 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-overview',
-  templateUrl: 'overview.html',
+  selector: 'page-item-list',
+  templateUrl: 'item-list.html',
 })
-export class OverviewPage {
+export class ItemListPage {
+
+  public cat: string;
+  public topic: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.cat = this.navParams.get('cat');
+    this.topic = this.navParams.get('topic');
+
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad OverviewPage');
+    console.log('ionViewDidLoad ItemListPage');
   }
-  openListPage(cat: string, topic: string){
-    this.navCtrl.push('ItemListPage', {
-      cat: cat,
-      topic: topic
-    });
-  }
+
 }
