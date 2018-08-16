@@ -11,17 +11,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 @IonicPage()
 @Component({
   selector: 'page-overview',
-  templateUrl: 'overview.html',
+  templateUrl: 'overview.html'
 })
 export class OverviewPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad OverviewPage');
   }
-  openListPage(cat: string, topic: string){
+
+  openListPage(cat: string, topic: string) {
     this.navCtrl.push('ItemListPage', {
       cat: cat,
       topic: topic

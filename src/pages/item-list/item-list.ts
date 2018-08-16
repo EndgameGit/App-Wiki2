@@ -21,7 +21,6 @@ export class ItemListPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.cat = this.navParams.get('cat');
     this.topic = this.navParams.get('topic');
-
   }
 
   ionViewDidLoad() {

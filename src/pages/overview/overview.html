@@ -5,66 +5,70 @@
   </ion-navbar>
   <ion-searchbar ></ion-searchbar>
 
+  <ion-toolbar>
+    <ion-searchbar></ion-searchbar>
+  </ion-toolbar>
+
 </ion-header>
 
 
 <ion-content padding>
   <ion-grid text-center>
     <ion-row>
-      <ion-col col-6><h4>3D-Drucker</h4></ion-col>
-      <ion-col col-6><h4>CNC-Fräse</h4></ion-col>
+      <ion-col col-6>
+        <h4>3D Drucker</h4>
+      </ion-col>
+      <ion-col col-6>
+        <h4>CNC</h4>
+      </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col col-6 (click)="openListPage('3D','Material')"><ion-card>
-
-        <ion-card-content>
-          Material
-        </ion-card-content>
-
-      </ion-card></ion-col>
-      <ion-col col-6 (click)="openListPage('CNC','Material')"><ion-card>
-
-
-        <ion-card-content>
-          Material
-        </ion-card-content>
-
-      </ion-card></ion-col>
+      <ion-col col-6 (click)="openListPage('3D', 'Material')">
+        <ion-card>
+          <ion-card-content>
+            Material
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col col-6 (click)="openListPage('CNC', 'Material')">
+        <ion-card>
+          <ion-card-content>
+            Material
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col col-6 (click)="openListPage('3D','Software')"><ion-card>
-
-        <ion-card-content>
-          Software
-        </ion-card-content>
-
-      </ion-card></ion-col>
-      <ion-col col-6 (click)="openListPage('CNC','Software')"><ion-card>
-
-
-        <ion-card-content>
-          Software
-        </ion-card-content>
-
-      </ion-card></ion-col>
+      <ion-col col-6 (click)="openListPage('3D', 'Software')">
+        <ion-card>
+          <ion-card-content>
+            Software
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col col-6 (click)="openListPage('CNC', 'Software')">
+        <ion-card>
+          <ion-card-content>
+            Software
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col col-6 (click)="openListPage('3D','Baupläne')"><ion-card>
-
-        <ion-card-content>
-          Hardware
-        </ion-card-content>
-
-      </ion-card></ion-col>
-      <ion-col col-6 (click)="openListPage('CNC','Baupläne')"><ion-card>
-
-
-        <ion-card-content>
-          Hardware
-        </ion-card-content>
-
-      </ion-card></ion-col>
+      <ion-col col-6 (click)="openListPage('3D', 'Baupläne')">
+        <ion-card>
+          <ion-card-content>
+            Baupläne
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col col-6 (click)="openListPage('CNC', 'Baupläne')">
+        <ion-card>
+          <ion-card-content>
+            Baupläne
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
     </ion-row>
-
   </ion-grid>
 </ion-content>
