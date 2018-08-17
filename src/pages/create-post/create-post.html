@@ -9,7 +9,7 @@
 
 <ion-content padding>
   <ion-list>
-    <p>Wähle Kategorie und Thema:</p>
+    <h4>Wähle Kategorie und Thema:</h4>
     <ion-item>
       <ion-label>Kategorie</ion-label>
       <ion-select [(ngModel)]="newPost.cat">
@@ -25,15 +25,19 @@
         <ion-option value="Baupläne">Baupläne</ion-option>
       </ion-select>
     </ion-item>
+    <h4>Vorschaubild auswählen:</h4>
+    <button ion-button block color="primary">Bild hinzufügen</button>
+    <h4>Füge Titel und Text hinzu:</h4>
     <ion-item>
       <ion-input [(ngModel)]="newPost.title" placeholder="Überschrift"></ion-input>
     </ion-item>
     <ion-item>
       <ion-textarea [(ngModel)]="newPost.text" placeholder="Text"></ion-textarea>
     </ion-item>
-    <p>Dokumente hinzufügen:</p>
+    <h4>Dokumente hinzufügen:</h4>
+    <button ion-button block color="primary" >Dokumente hinzufügen</button>
   </ion-list>
 
-  <button ion-button block (click)="savePost()">Beitrag erstellen</button>
+  <button ion-button block color="dark" (click)="savePost()">Beitrag erstellen</button>
 
 </ion-content>
